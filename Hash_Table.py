@@ -13,7 +13,7 @@ class HashTable:
         index = self.get_hash_value(key)
         bucket = self.table[index]
         pair = self.find_pair_in_bucket(bucket, key)
-        if pair == False:
+        if pair is False:
             bucket.append([key, value])
         elif pair[1] != value:
             pair[1] = value
@@ -22,7 +22,7 @@ class HashTable:
         index = self.get_hash_value(key)
         bucket = self.table[index]
         pair = self.find_pair_in_bucket(bucket, key)
-        if pair != False:
+        if pair is not False:
             return pair[1]
         return key + ' not in table'
 
@@ -30,16 +30,16 @@ class HashTable:
         index = self.get_hash_value(key)
         bucket = self.table[index]
         pair = self.find_pair_in_bucket(bucket, key)
-        if pair != False:
+        if pair is not False:
             bucket.remove(pair)
 
     def get_hash_value(self, string):
         string = str(string)
         index = 1
-        hash = 0
+        hash_num = 0
         temp = 0
         for ind_char in string:
             temp += (ord(ind_char) * index)
             index += 1
-        hash += temp % self.size
-        return hash
+        hash_num += temp % self.size
+        return hash_num

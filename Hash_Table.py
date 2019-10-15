@@ -3,13 +3,11 @@ class HashTable:
         self.table = [[] for i in range(size)]
         self.size = size
 
-
     def find_pair_in_bucket(self, bucket, key):
         for pair in bucket:
             if pair[0] == key:
                 return pair
         return False
-
 
     def add_hashed_value(self, key, value=0):
         index = self.get_hash_value(key)
@@ -20,7 +18,6 @@ class HashTable:
         elif pair[1] != value:
             pair[1] = value
 
-
     def get_value(self, key):
         index = self.get_hash_value(key)
         bucket = self.table[index]
@@ -28,7 +25,6 @@ class HashTable:
         if pair != False:
             return pair[1]
         return key + ' not in table'
-
 
     def delete_key(self, key):
         index = self.get_hash_value(key)

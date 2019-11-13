@@ -43,6 +43,9 @@ class LinkedList:
         else:
             print(val, 'was deleted successfully')
 
+    def get_root(self):
+        return self.root
+
     def get_node(self, val):
         current = self.root
         while current is not None:
@@ -52,17 +55,3 @@ class LinkedList:
         return str(val) + ' was not found'
 
 
-cool_list = LinkedList()
-cool_list.insert(1)
-cool_list.insert(1)
-cool_list.insert(2)
-cool_list.insert(1)
-cool_list.insert(1)
-
-cool_list.delete_node(1)
-
-print(cool_list.get_node(1))
-print(cool_list.get_node(2))
-print(cool_list.get_node(3))
-
-cool_list.in_order()
